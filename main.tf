@@ -12,6 +12,7 @@ terraform {
 
 provider "azurerm" {
   features {}
+  version = "~> 3.25.0"
 }
 
 resource "azurerm_resource_group" "rg" {
