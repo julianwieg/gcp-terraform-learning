@@ -1,4 +1,4 @@
-# Automate Terraform with GitHub Actions
+# GCP Terraform Setup
 
-gcp
-This repo is a companion repo to the [Automate Terraform with GitHub Actions](https://learn.hashicorp.com/tutorials/terraform/github-actions?in=terraform/automation).
+This repo is a terraform setup to manage gcp for my org wieg.me
+This is for testing purposes. 
