@@ -8,6 +8,7 @@ terraform {
 }
 
 provider "google" {
+  credentials = var.GOOGLE_CREDENTIALS
 }
 
 data "google_folder" "production" {
