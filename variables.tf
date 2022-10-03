@@ -1,9 +1,3 @@
-variable "GOOGLE_CREDENTIALS" {
-  type = string
-  sensitive = true
-  description = "Google Cloud service account credentials"
-}
-
 variable "production_folder_name" {
   type        = string
   description = "The name of the production folder"

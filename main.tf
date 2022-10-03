@@ -1,6 +1,3 @@
-provider "google" {
-}
-
 terraform {
   required_providers {
     google = {
@@ -8,6 +5,9 @@ terraform {
       version = "~> 3"
     }
   }
+}
+
+provider "google" {
 }
 
 data "google_folder" "production" {
