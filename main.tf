@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+/*
 provider "google" {
   credentials = var.GOOGLE_CREDENTIALS
 }
@@ -14,7 +15,7 @@ provider "google" {
 data "google_folder" "production" {
   folder = var.production_folder_name
 }
-
+*/
 
 
 resource "google_project" "production" {
