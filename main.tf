@@ -10,16 +10,6 @@ terraform {
   }
 }
 
-terraform {
-  cloud {
-    organization = "wiegme"
-
-    workspaces {
-      name = "gcp-wiegme"
-    }
-  }
-}
-
 data "google_folder" "production" {
   folder = var.production_folder_name
 }
