@@ -4,19 +4,19 @@ variable "GOOGLE_CREDENTIALS" {
   description = "Google Cloud service account credentials"
 }
 
-variable "production_folder_name" {
+variable "production_folder_id" {
   type        = string
-  description = "The name of the production folder"
+  description = "The id of the production folder"
 }
 
-variable "nonproduction_folder_name" {
+variable "nonproduction_folder_id" {
   type        = string
-  description = "The name of the nonproduction folder"
+  description = "The id of the nonproduction folder"
 }
 
-variable "development_folder_name" {
+variable "development_folder_id" {
   type        = string
-  description = "The name of the development folder"
+  description = "The id of the development folder"
 }
 
 variable "project_prefix" {
