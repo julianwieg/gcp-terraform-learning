@@ -1,5 +1,5 @@
-production_folder_name = "426644374791"
-nonproduction_folder_name = "676741336092"
-development_folder_name = "880593446086"
+production_folder_id = "426644374791"
+nonproduction_folder_id = "676741336092"
+development_folder_id = "880593446086"
 project_prefix = "proj-"
 team_name = "team1"
