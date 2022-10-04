@@ -1,5 +1,5 @@
-production_folder_name = "production"
-nonproduction_folder_name = "shared"
-development_folder_name = "development"
+production_folder_name = "426644374791"
+nonproduction_folder_name = "676741336092"
+development_folder_name = "880593446086"
 project_prefix = "proj-"
 team_name = "team1"
