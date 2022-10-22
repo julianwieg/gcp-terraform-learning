@@ -25,18 +25,18 @@ data "google_folder" "development" {
 
 resource "google_project" "production" {
   name       = "${var.team_name}Production"
-  project_id = "${var.project_prefix}-${var.team_name}-prod"
+  project_id = "${var.project_prefix}-${var.team_names}-prod"
   folder_id  = data.google_folder.production.id
 }
 
 resource "google_project" "development" {
   name       = "${var.team_name}Development"
-  project_id = "${var.project_prefix}-${var.team_name}-dev"
+  project_id = "${var.project_prefix}-${var.team_names}-dev"
   folder_id  = data.google_folder.development.id
 }
 
 resource "google_project" "shared" {
   name       = "${var.team_name}Shared"
-  project_id = "${var.project_prefix}-${var.team_name}-shared"
+  project_id = "${var.project_prefix}-${var.team_names}-shared"
   folder_id  = data.google_folder.production.id
 }

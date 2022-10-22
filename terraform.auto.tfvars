@@ -2,4 +2,8 @@ production_folder_id = "426644374791"
 nonproduction_folder_id = "676741336092"
 development_folder_id = "880593446086"
 project_prefix = "proj-"
-team_name = "team1"
+
+team_names = [
+  "team1"
+  "cool"
+]

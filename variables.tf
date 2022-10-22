@@ -9,11 +9,6 @@ variable "production_folder_id" {
   description = "The id of the production folder"
 }
 
-variable "nonproduction_folder_id" {
-  type        = string
-  description = "The id of the nonproduction folder"
-}
-
 variable "development_folder_id" {
   type        = string
   description = "The id of the development folder"
@@ -24,7 +19,7 @@ variable "project_prefix" {
   description = "Used to prefix the project names to ensure global uniqueness"
 }
 
-variable "team_name" {
-  type        = string
+variable "team_names" {
+  type        = list(string)
   description = "The name of the team to be onboarded"
 }
