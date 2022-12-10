@@ -4,6 +4,6 @@ development_folder_id = "880593446086"
 project_prefix = "proj-"
 
 team_names = [
-  "team1"
+  "team1",
   "cool"
 ]
