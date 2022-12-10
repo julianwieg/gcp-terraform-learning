@@ -9,6 +9,11 @@ variable "production_folder_id" {
   description = "The id of the production folder"
 }
 
+variable "shared_folder_id" {
+  type        = string
+  description = "The id of the shared folder"
+}
+
 variable "development_folder_id" {
   type        = string
   description = "The id of the development folder"

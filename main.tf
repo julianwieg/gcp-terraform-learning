@@ -16,7 +16,7 @@ data "google_folder" "production" {
 }
 
 data "google_folder" "shared" {
-  folder = var.nonproduction_folder_id
+  folder = var.shared_folder_id
 }
 
 data "google_folder" "development" {
