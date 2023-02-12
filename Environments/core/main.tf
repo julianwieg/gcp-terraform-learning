@@ -44,6 +44,7 @@ module "log_export" {
   destination_uri        = "${module.destination.destination_uri}"
   filter                 = ""
   log_sink_name          = "storage_logsink"
+  include_children       = "true"
   parent_resource_id     = "608604741391"
   parent_resource_type   = "folder"
   unique_writer_identity = true
