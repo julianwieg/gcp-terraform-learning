@@ -74,4 +74,5 @@ module "destination" {
   project_id               = module.project-factory.project_id
   storage_bucket_name      = "logging_bucket"
   log_sink_writer_identity = "${module.log_export.writer_identity}"
+  force_destroy            = true
 }
