@@ -71,7 +71,7 @@ module "log_export" {
 
 module "destination" {
   source                   = "terraform-google-modules/log-export/google//modules/storage"
-  project_id               = "logging-377613"
-  storage_bucket_name      = "storage_example_bucket"
+  project_id               = module.project-factory.project_id
+  storage_bucket_name      = "logging_bucket"
   log_sink_writer_identity = "${module.log_export.writer_identity}"
 }
