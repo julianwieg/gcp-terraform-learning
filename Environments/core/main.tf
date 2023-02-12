@@ -25,7 +25,7 @@ module "folders" {
 
   set_roles = true
 
-  prefix = "fldr_"
+  prefix = "fldr"
   
   per_folder_admins = {
     dev = "group:gcp-organization-admins@wieg.me"
