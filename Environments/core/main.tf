@@ -47,7 +47,7 @@ module "project-factory" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
-  name                    = "shared_logging"
+  name                    = "shared-logging"
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
