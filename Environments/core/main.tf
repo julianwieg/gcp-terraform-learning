@@ -41,7 +41,7 @@ module "folders" {
 
 module "project-factory" {
   source                  = "terraform-google-modules/project-factory/google"
-  version                 = "~> 14.1"
+  version                 = "~> 14.0"
   random_project_id       = true
   name                    = "shared_logging"
   org_id                  = var.organization_id
