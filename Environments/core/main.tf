@@ -39,10 +39,24 @@ module "folders" {
   ]
 }
 
+module "project-factory" {
+  source                  = "terraform-google-modules/project-factory/google"
+  version                 = "~> 14.1"
+  random_project_id       = true
+  name                    = "shared_logging"
+  org_id                  = var.organization_id
+  billing_account         = var.billing_account
+  default_service_account = "deprivilege"
+
+  activate_api_identities = [{
+    api = "storage.googleapis.com"
+  }]
+}
+
 module "log_export" {
   source                 = "terraform-google-modules/log-export/google"
   destination_uri        = "${module.destination.destination_uri}"
-  filter                 = ""
+  filter                 = "severity >= ERROR"
   log_sink_name          = "storage_logsink"
   include_children       = "true"
   parent_resource_id     = "608604741391"
