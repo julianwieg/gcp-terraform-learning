@@ -11,6 +11,10 @@ provider "google" {
   credentials = var.GOOGLE_CREDENTIALS
 }
 
+provider "google-beta" {
+  credentials = var.GOOGLE_CREDENTIALS
+}
+
 module "folders" {
   source  = "terraform-google-modules/folders/google"
   version = "~> 3.0"
