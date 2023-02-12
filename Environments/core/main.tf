@@ -47,10 +47,11 @@ module "project-factory" {
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
-
+  /*
   activate_api_identities = [{
     api = "storage.googleapis.com"
   }]
+  */
 }
 
 module "log_export" {
