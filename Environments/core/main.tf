@@ -43,7 +43,7 @@ module "folders" {
   ]
 }
 
-module "project-factory" {
+module "project-factory-logging" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
@@ -71,7 +71,7 @@ module "log_export" {
 
 module "destination" {
   source                   = "terraform-google-modules/log-export/google//modules/storage"
-  project_id               = module.project-factory.project_id
+  project_id               = module.project-factory-logging.project_id
   storage_bucket_name      = "logging_bucket"
   log_sink_writer_identity = "${module.log_export.writer_identity}"
   force_destroy            = true
