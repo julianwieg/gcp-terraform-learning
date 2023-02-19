@@ -22,7 +22,7 @@ module "dev_project" {
   version                 = "~> 14.0"
   random_project_id       = true
   name                    = "dev-project"
-  folder_id               = data.terraform_remote_state.gcp-core.outputs.folders_map["common"].name
+  folder_id               = data.terraform_remote_state.gcp-core.outputs.folders_map["development"].name
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
