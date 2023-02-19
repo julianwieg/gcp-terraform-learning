@@ -15,6 +15,7 @@ provider "google-beta" {
   credentials = var.GOOGLE_CREDENTIALS
 }
 
+// setup folder structure in gcp
 module "folders" {
   source  = "terraform-google-modules/folders/google"
   version = "~> 3.0"
@@ -43,6 +44,7 @@ module "folders" {
   ]
 }
 
+// setup logging project 
 module "project-factory-logging" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
@@ -51,13 +53,10 @@ module "project-factory-logging" {
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
-  /*
-  activate_api_identities = [{
-    api = "storage.googleapis.com"
-  }]
-  */
 }
 
+
+// setup log exporting and destination for gcp
 module "log_export" {
   source                 = "terraform-google-modules/log-export/google"
   destination_uri        = "${module.destination.destination_uri}"
@@ -72,7 +71,7 @@ module "log_export" {
 module "destination" {
   source                   = "terraform-google-modules/log-export/google//modules/storage"
   project_id               = module.project-factory-logging.project_id
-  storage_bucket_name      = "logging_bucket"
+  storage_bucket_name      = "logging_bucket${random_string.suffix.result}"
   log_sink_writer_identity = "${module.log_export.writer_identity}"
   force_destroy            = true
 }
