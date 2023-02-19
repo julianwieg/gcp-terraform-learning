@@ -8,7 +8,7 @@ output "vpc_dev_id" {
   value = module.vpc_dev.network_id
 }
 
-output "vpc_de_subnets" {
+output "vpc_dev_subnets" {
   description = "development-vpc subnets"
   value = module.vpc_dev.subnets
 }

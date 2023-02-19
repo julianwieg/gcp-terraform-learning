@@ -1,0 +1,1 @@
+creates folder structure, logging project and shared network for development (only currently)
