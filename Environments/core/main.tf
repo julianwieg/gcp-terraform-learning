@@ -45,7 +45,7 @@ module "project-factory-logging" {
   version                 = "~> 14.0"
   random_project_id       = true
   name                    = "shared-logging"
-  folder_id               = "${module.my_logging_folder.id}"
+  folder_id               = "${data.my_logging_folder.id}"
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
