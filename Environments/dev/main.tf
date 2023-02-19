@@ -21,7 +21,7 @@ module "dev_project" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
-  name                    = "development_project"
+  name                    = "dev-project"
   folder_id               = data.terraform_remote_state.gcp-core.outputs.folders_map["common"].name
   org_id                  = var.organization_id
   billing_account         = var.billing_account
