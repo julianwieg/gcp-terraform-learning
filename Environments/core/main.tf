@@ -133,7 +133,3 @@ module "vpc_dev" {
       ]
 }
 
-output "folders_map" {
-  description = "Folder map"
-  value = module.folders.folders_map
-}
