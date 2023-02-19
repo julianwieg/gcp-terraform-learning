@@ -34,13 +34,18 @@ module "folders" {
   ]
 }
 
+# Search by fields
+data "google_folder" "my_logging_folder" {
+  folder = "folders/fldr-common"
+}
+
 // setup logging project 
 module "project-factory-logging" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
   name                    = "shared-logging"
-  folder_id               = module.folders.ids
+  folder_id               = "${module.my_logging_folder.id}"
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
