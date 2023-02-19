@@ -50,7 +50,7 @@ module "project-factory-logging" {
   version                 = "~> 14.0"
   random_project_id       = true
   name                    = "shared-logging"
-  folder_id               = data.google_folder.my_logging_folder_id
+  folder_id               = module.folders.folders_map["common"].name
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
