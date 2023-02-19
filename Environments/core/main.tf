@@ -15,6 +15,12 @@ provider "google-beta" {
   credentials = var.GOOGLE_CREDENTIALS
 }
 
+resource "random_string" "suffix" {
+  length  = 4
+  upper   = false
+  special = false
+}
+
 // setup folder structure in gcp
 module "folders" {
   source  = "terraform-google-modules/folders/google"
