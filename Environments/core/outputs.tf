@@ -3,12 +3,12 @@ output "folders_map" {
   value = module.folders.folders_map
 }
 
-output "development-vpc-id" {
+output "vpc_dev_id" {
   description = "development-vpc network"
-  value = module.development-vpc.network_id
+  value = module.vpc_dev.network_id
 }
 
-output "development-vpc-subnets" {
+output "vpc_de_subnets" {
   description = "development-vpc subnets"
-  value = module.development-vpc.subnets
+  value = module.vpc_dev.subnets
 }
