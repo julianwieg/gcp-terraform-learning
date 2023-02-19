@@ -1,20 +1,4 @@
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "4.52.0"
-    }
-  }
-}
-
-provider "google" {
-  credentials = var.GOOGLE_CREDENTIALS
-}
-
-provider "google-beta" {
-  credentials = var.GOOGLE_CREDENTIALS
-}
-
+// create random string for buckets
 resource "random_string" "suffix" {
   length  = 4
   upper   = false
@@ -56,6 +40,7 @@ module "project-factory-logging" {
   version                 = "~> 14.0"
   random_project_id       = true
   name                    = "shared-logging"
+  folder_id               = module.folders.ids
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
@@ -77,7 +62,7 @@ module "log_export" {
 module "destination" {
   source                   = "terraform-google-modules/log-export/google//modules/storage"
   project_id               = module.project-factory-logging.project_id
-  storage_bucket_name      = "logging_bucket${random_string.suffix.result}"
+  storage_bucket_name      = "logging_bucket_${random_string.suffix.result}"
   log_sink_writer_identity = "${module.log_export.writer_identity}"
   force_destroy            = true
 }
