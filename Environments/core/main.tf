@@ -34,16 +34,6 @@ module "folders" {
   ]
 }
 
-# Search by fields
-data "google_folder" "my_logging_folder" {
-  folder = "folders/gcporgsetup/fldr-common"
-}
-
-output "my_logging_folder_id" {
-  value = data.google_folder.my_logging_folder.id
-}
-
-
 // setup logging project 
 module "project-factory-logging" {
   source                  = "terraform-google-modules/project-factory/google"
