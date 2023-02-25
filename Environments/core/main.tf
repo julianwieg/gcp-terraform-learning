@@ -81,6 +81,7 @@ module "project-factory-network" {
   activate_apis = [
     "compute.googleapis.com",
     "iam.googleapis.com",
+    "cloudresourcemanager.googleapis.com"
   ]
 }
 
