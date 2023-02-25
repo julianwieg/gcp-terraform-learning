@@ -16,12 +16,24 @@ data "terraform_remote_state" "gcp-core" {
   }
 }
 
-// setup dev project 
+// setup dev1-compute project 
 module "dev_project" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
-  name                    = "dev-project"
+  name                    = "proj-dev1-compute"
+  folder_id               = data.terraform_remote_state.gcp-core.outputs.folders_map["development"].name
+  org_id                  = var.organization_id
+  billing_account         = var.billing_account
+  default_service_account = "deprivilege"
+}
+
+// setup dev2-gke project 
+module "dev_project" {
+  source                  = "terraform-google-modules/project-factory/google"
+  version                 = "~> 14.0"
+  random_project_id       = true
+  name                    = "proj-dev2-gke"
   folder_id               = data.terraform_remote_state.gcp-core.outputs.folders_map["development"].name
   org_id                  = var.organization_id
   billing_account         = var.billing_account
