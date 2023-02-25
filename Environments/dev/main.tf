@@ -17,7 +17,7 @@ data "terraform_remote_state" "gcp-core" {
 }
 
 // setup dev1-compute project 
-module "dev_project" {
+module "dev1-compute" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
@@ -29,7 +29,7 @@ module "dev_project" {
 }
 
 // setup dev2-gke project 
-module "dev_project" {
+module "dev2-gke" {
   source                  = "terraform-google-modules/project-factory/google"
   version                 = "~> 14.0"
   random_project_id       = true
