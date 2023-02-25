@@ -16,6 +16,16 @@ data "terraform_remote_state" "gcp-core" {
   }
 }
 
+/*
+output "vpc_dev_id" {
+  description = "development-vpc network"
+  value = module.vpc_dev.network_id
+}
+
+output "vpc_dev_subnets" {
+  description = "development-vpc subnets"
+  value = module.vpc_dev.subnets
+} */
 // setup dev1-compute project 
 module "dev1-compute" {
   source                  = "terraform-google-modules/project-factory/google"
@@ -26,6 +36,9 @@ module "dev1-compute" {
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
+  svpc_host_project_id    = data.terraform_remote_state.gcp-core.outputs.vpc_dev_id
+
+ 
 }
 
 // setup dev2-gke project 
