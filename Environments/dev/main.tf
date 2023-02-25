@@ -36,7 +36,7 @@ module "dev1-compute" {
   org_id                  = var.organization_id
   billing_account         = var.billing_account
   default_service_account = "deprivilege"
-  svpc_host_project_id    = data.terraform_remote_state.gcp-core.outputs.vpc_dev_id
+  svpc_host_project_id    = data.terraform_remote_state.gcp-core.outputs.vpc_dev_id   //assign host project to this service project
 
  
 }
